@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/colorPrimayDark"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="5dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:background="@drawable/layout_background">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:id="@+id/rlSubjectDetails"
+                    android:layout_toStartOf="@id/spacer_1"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvSubjectCode_deleteSubjectList"
+                        android:textColor="@color/colorBlue"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvSubjectName_deleteSubjectList"
+                        android:maxLines="3"
+                        android:textColor="@color/colorBlue"
+                        android:layout_below="@id/tvSubjectCode_deleteSubjectList"
+                        android:textSize="12sp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="italic"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:id="@+id/tvBranch_deleteSubjectList"
+                        android:textColor="@color/colorWhite"
+                        android:layout_below="@id/tvSubjectName_deleteSubjectList"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="italic"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvSem_deleteSubjectList"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"
+                        android:layout_toEndOf="@id/tvBranch_deleteSubjectList"
+                        android:layout_below="@id/tvSubjectName_deleteSubjectList"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="italic"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimayDark"
+                    android:layout_toStartOf="@id/ibDeleteSubject_deleteSubjectList"
+                    android:id="@+id/spacer_1"/>
+
+                <ImageButton
+                    android:padding="10dp"
+                    android:id="@+id/ibDeleteSubject_deleteSubjectList"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/small_button_background"
+                    android:src="@drawable/ic_cancel"
+                    android:tint="@color/colorRed"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

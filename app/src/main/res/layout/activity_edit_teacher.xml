@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditTeacherActivity"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorGrey"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="400dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_below="@id/progressBar">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:id="@+id/tvTeacherProfileName_Edit"
+                    android:maxLines="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:id="@+id/tvTeacherProfileEmail_Edit"
+                    android:maxLines="3"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:id="@+id/tvTeacherProfileID_Edit"
+                    android:maxLines="3"
+                    android:layout_marginTop="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone: "
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp"
+                            android:maxLines="3"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="end"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp"
+                            android:id="@+id/tvTeacherProfilePhone_Edit"
+                            android:maxLines="3" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="D.O.B: "
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp"
+                            android:maxLines="3"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp"
+                            android:id="@+id/tvTeacherProfileDOB_Edit"
+                            android:maxLines="3"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select the Branches you handle :"
+                android:textColor="@color/colorGrey"
+                android:textStyle="italic"
+                android:textSize="10sp"
+                android:layout_marginTop="10dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cbBSC"
+                        android:text="Basic Science"
+                        android:tag="bsc"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="5dp"
+                        android:onClick="onCheckBoxClicked"
+                        android:buttonTint="@color/colorGrey"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cbCSE"
+                        android:text="Computer Science"
+                        android:tag="cse"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="5dp"
+                        android:onClick="onCheckBoxClicked"
+                        android:buttonTint="@color/colorGrey"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cbISE"
+                        android:text="Information Science"
+                        android:tag="ise"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="5dp"
+                        android:onClick="onCheckBoxClicked"
+                        android:buttonTint="@color/colorGrey"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cbECE"
+                        android:text="Electronics and Communications"
+                        android:tag="ece"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="5dp"
+                        android:onClick="onCheckBoxClicked"
+                        android:buttonTint="@color/colorGrey"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cbEEE"
+                        android:text="Electricals"
+                        android:tag="eee"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="5dp"
+                        android:onClick="onCheckBoxClicked"
+                        android:buttonTint="@color/colorGrey"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cbCIV"
+                        android:text="Civil"
+                        android:tag="civ"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="5dp"
+                        android:onClick="onCheckBoxClicked"
+                        android:buttonTint="@color/colorGrey"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cbMECH"
+                        android:text="Mechanical"
+                        android:tag="mec"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="5dp"
+                        android:onClick="onCheckBoxClicked"
+                        android:buttonTint="@color/colorGrey"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Submit"
+                android:textColor="@color/colorWhite"
+                android:textStyle="italic"
+                android:textAllCaps="false"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/btnSubmitTeacher_Edit"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

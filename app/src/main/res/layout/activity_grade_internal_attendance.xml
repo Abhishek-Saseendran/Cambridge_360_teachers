@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GradeInternalAttendanceActivity"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorGrey"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="400dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/progressBar"
+        android:padding="10dp">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/ibPlusOneMain"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_plus_1"
+            android:background="@drawable/button_background"
+            android:tint="@color/colorGreen"
+            android:layout_marginEnd="10dp"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/ibMinusOneMain"
+            android:layout_toStartOf="@id/ibPlusOneMain"
+            android:src="@drawable/ic_minus_1"
+            android:background="@drawable/button_background"
+            android:layout_marginEnd="5dp"
+            android:tint="@color/colorRed"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSubjectName_gradeActivity"
+            android:text="17CS008 : Aritfivial Intelligence"
+            android:layout_toStartOf="@id/ibMinusOneMain"
+            android:textStyle="italic|bold"
+            android:textSize="14sp"
+            android:textColor="@color/colorBlue"
+            android:gravity="start"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSubjectName_gradeActivity"
+            android:id="@+id/tvSubjectClass_gradeActivity"
+            android:textStyle="italic"
+            android:text="CSE 6 A"
+            android:layout_toStartOf="@id/ibMinusOneMain"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp"
+            android:gravity="start"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/tvTotalClasses_gradeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSubjectClass_gradeActivity"
+            android:text="Total Classes : "
+            android:layout_toStartOf="@id/ibMinusOneMain"
+            android:textStyle="italic"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp"
+            android:gravity="start"
+            android:layout_marginStart="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_search"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:hint="Search student by USN or Name"
+            android:drawablePadding="10dp"
+            android:textStyle="italic"
+            android:layout_below="@id/tvTotalClasses_gradeActivity"
+            android:layout_margin="10dp"
+            android:id="@+id/etSearchForStudent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etSearchForStudent"
+            android:layout_above="@id/btnSaveGrades"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rvGradeStudent"/>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Save"
+            android:textColor="@color/colorWhite"
+            android:textStyle="italic"
+            android:textAllCaps="false"
+            android:id="@+id/btnSaveGrades"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

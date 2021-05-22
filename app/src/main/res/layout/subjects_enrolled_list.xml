@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/colorPrimary">
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/colorPrimayDark"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardMaxElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimayDark"
+            android:padding="2dp">
+
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="Code"
+                android:textStyle="italic"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/tvCode_subjectEnrolledItem"/>
+
+
+            <TextView
+                android:id="@+id/tvSubject_subjectEnrolledItem"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/tvCode_subjectEnrolledItem"
+                android:layout_marginStart="2dp"
+                android:layout_toStartOf="@id/tvClass_subjectEnrolledItem"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="Subject"
+                android:textSize="12dp"
+                android:padding="2dp"
+                android:maxLines="4"
+                android:textStyle="italic"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvClass_subjectEnrolledItem"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_toStartOf="@id/ibCancelButton"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:text="Class"
+                android:textStyle="italic"
+                android:textColor="@color/colorWhite" />
+
+            <ImageButton
+                android:id="@+id/ibCancelButton"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/small_button_background_cancel"
+                android:gravity="center"
+                android:src="@drawable/ic_cancel"
+                android:tint="@color/colorRed" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

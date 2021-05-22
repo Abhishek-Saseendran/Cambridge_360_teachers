@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNoticeActivity"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorGrey"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="400dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose the type of file you wish to upload"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:gravity="center_horizontal"
+            android:id="@+id/tvChooseType"
+            android:layout_alignParentTop="true"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rgFileType"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/tvChooseType"
+            android:layout_margin="10dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbPDF"
+                android:text="PDF"
+                android:textStyle="italic"
+                android:textColor="@color/colorWhite"
+                android:buttonTint="@color/colorGrey"
+                android:tag="pdf"/>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbDOC"
+                android:text="Document"
+                android:textStyle="italic"
+                android:textColor="@color/colorWhite"
+                android:buttonTint="@color/colorGrey"
+                android:tag="doc"/>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbIMAGE"
+                android:text="Image"
+                android:textStyle="italic"
+                android:textColor="@color/colorWhite"
+                android:buttonTint="@color/colorGrey"
+                android:tag="image"/>
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvFileName"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/rgFileType"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorBlue"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Select file"
+            android:textColor="@color/colorWhite"
+            android:textStyle="italic"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:layout_below="@id/tvFileName"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:id="@+id/btnSelectFile"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnSelectFile"
+            android:background="@drawable/edit_text_background"
+            android:layout_margin="10dp"
+            android:hint="File name"
+            android:textStyle="italic"
+            android:drawableStart="@drawable/ic_name"
+            android:drawableTint="@color/colorPrimary"
+            android:drawablePadding="10dp"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:id="@+id/etFilename"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etFilename"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Description"
+            android:textStyle="italic"
+            android:drawableStart="@drawable/ic_internals"
+            android:drawableTint="@color/colorPrimary"
+            android:drawablePadding="10dp"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:id="@+id/etFileDescription"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textSize="12sp"
+            android:text="Choose the branch and semester you want to upload the file to :"
+            android:textColor="@color/colorWhite"
+            android:layout_below="@id/etFileDescription"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_horizontal"
+            android:id="@+id/tvChoose"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvChoose"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/rlBranchSem_addSubject">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Branch"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"
+                android:layout_toStartOf="@+id/spinBranch_addNotice"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp" />
+
+            <Spinner
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinBranch_addNotice"
+                android:backgroundTint="@color/colorWhite"
+                android:prompt="@string/choose_branch"
+                android:entries="@array/branch_array"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sem"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"
+                android:layout_toStartOf="@+id/spinSem_addNotice"
+                android:layout_below="@id/spinBranch_addNotice"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp" />
+
+            <Spinner
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinSem_addNotice"
+                android:backgroundTint="@color/colorWhite"
+                android:prompt="@string/choose_sem"
+                android:entries="@array/sem_array"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/spinBranch_addNotice"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Upload"
+            android:textColor="@color/colorWhite"
+            android:textStyle="italic"
+            android:textAllCaps="false"
+            android:layout_below="@id/rlBranchSem_addSubject"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:id="@+id/btnUpload"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

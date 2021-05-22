@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddSubjectsActivity"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorGrey"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="400dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/progressBar"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:hint="Subject ID"
+                android:textStyle="italic"
+                android:drawableStart="@drawable/ic_name"
+                android:drawableTint="@color/colorPrimary"
+                android:drawablePadding="10dp"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:id="@+id/etSubjectId_addSubject"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_below="@id/etSubjectId_addSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:hint="Subject name"
+                android:textStyle="italic"
+                android:drawableStart="@drawable/ic_internals"
+                android:drawableTint="@color/colorPrimary"
+                android:drawablePadding="10dp"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:id="@+id/etSubjectName_addSubject"
+                android:layout_marginTop="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etSubjectName_addSubject"
+                android:layout_marginTop="10dp"
+                android:id="@+id/rlBranchSem_addSubject">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Branch"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10sp"
+                    android:layout_toStartOf="@+id/spinBranch_addSubject"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp" />
+
+                <Spinner
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinBranch_addSubject"
+                    android:backgroundTint="@color/colorWhite"
+                    android:prompt="@string/choose_branch"
+                    android:entries="@array/branch_array"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10sp"
+                    android:layout_toStartOf="@+id/spinSem_addSubject"
+                    android:layout_below="@id/spinBranch_addSubject"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp" />
+
+                <Spinner
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinSem_addSubject"
+                    android:backgroundTint="@color/colorWhite"
+                    android:prompt="@string/choose_sem"
+                    android:entries="@array/sem_array"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/spinBranch_addSubject"
+                    android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlIsElective_addSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlBranchSem_addSubject"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical|center_horizontal">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="is Elective ?"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/colorWhite"
+                    android:layout_margin="5dp"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/cbIsElective_addSubject"
+                    android:onClick="onCheckIsElective"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rlIsElectiveTrue"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/cbIsElective_addSubject"
+                    android:layout_alignParentEnd="true">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/rgElectiveSet_addSubject">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rbSet1_addSubject"
+                            android:text="Set 1"
+                            android:textStyle="italic"
+                            android:textColor="@color/colorWhite"
+                            android:buttonTint="@color/colorGrey"
+                            android:tag="1"/>
+
+                        <Space
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rbSet2_addSubject"
+                            android:text="Set 2"
+                            android:textStyle="italic"
+                            android:textColor="@color/colorWhite"
+                            android:buttonTint="@color/colorGrey"
+                            android:tag="2"/>
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <EditText
+                android:layout_below="@id/rlIsElective_addSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:hint="Maximum marks"
+                android:textStyle="italic"
+                android:drawableStart="@drawable/ic_total_marks"
+                android:drawableTint="@color/colorPrimary"
+                android:drawablePadding="10dp"
+                android:inputType="number"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:id="@+id/etSubjectTotalMarks_addSubject"
+                android:layout_marginTop="10dp"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Save"
+            android:textColor="@color/colorWhite"
+            android:textStyle="italic"
+            android:textAllCaps="false"
+            android:id="@+id/btnSaveSubject_addSubject"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

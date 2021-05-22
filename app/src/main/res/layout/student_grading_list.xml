@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/colorPrimayDark"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="5dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_background"
+                android:layout_marginBottom="2dp">
+
+                <RelativeLayout
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rlHeaders_gradeList"
+                    android:background="@drawable/ripple_layout"
+                    android:padding="10dp"
+                    android:clickable="true"
+                    android:longClickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="2dp"
+                        android:background="@drawable/circle_image_background"
+                        android:id="@+id/civStudentImage"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorBlue"
+                        android:textStyle="italic|bold"
+                        android:id="@+id/tvStudentUSN"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@id/tvStudentUSN"
+                        android:maxLines="2"
+                        android:textStyle="italic"
+                        android:textSize="12sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colorWhite"
+                        android:id="@+id/tvStudentName"/>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimayDark"
+                    android:padding="2dp"
+                    android:layout_below="@id/rlHeaders_gradeList"
+                    android:id="@+id/spacer">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="Internal 1"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/colorWhite"
+                        android:id="@+id/tvCode"/>
+
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tvSubject"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:textSize="12sp"
+                        android:layout_toEndOf="@id/tvCode"
+                        android:layout_marginStart="2dp"
+                        android:layout_toStartOf="@id/tvClasses"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:text="Internal 2"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tvClasses"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:textSize="12sp"
+                        android:layout_marginStart="2dp"
+                        android:layout_toStartOf="@id/tvCancelButton"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:text="Internal 3"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tvCancelButton"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:textSize="12sp"
+                        android:layout_marginStart="2dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:text="Attendance"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/spacer"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:paddingBottom="2dp">
+
+                    <EditText
+                        android:layout_weight="1"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center"
+                        android:background="@drawable/edit_text_for_student_list_left"
+                        android:id="@+id/etInt1"/>
+
+
+                    <EditText
+                        android:layout_weight="1"
+                        android:id="@+id/etInt2"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/etInt1"
+                        android:layout_marginStart="2dp"
+                        android:layout_toStartOf="@id/etInt3"
+                        android:background="@drawable/edit_text_for_student_list_middle"
+                        android:gravity="center"
+                        android:textStyle="italic"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:layout_weight="1"
+                        android:id="@+id/etInt3"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:layout_toStartOf="@id/etAttendance"
+                        android:background="@drawable/edit_text_for_student_list_middle"
+                        android:gravity="center"
+                        android:textStyle="italic"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:layout_weight="1"
+                        android:id="@+id/etAttendance"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/edit_text_for_student_list_right"
+                        android:gravity="center"
+                        android:textStyle="italic"
+                        android:textSize="14sp" />
+
+
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>
